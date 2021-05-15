@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <ul class="nav pull-right top-menu">
         <!-- user login dropdown start-->
         <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <a data-toggle="dropdown"  href="#">
                 <img alt="" src="{{asset('public/frontend/images/2.png')}}">
                 <span class="username">
                     <?php

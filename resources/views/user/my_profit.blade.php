@@ -102,36 +102,51 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane active bg-light text-dark" id="settings">
-                    <form class="form-horizontal bg-light text-dark"  action="{{URL::to('/v1/user/'.$user_check->ma_user)}}" method="post">
+                    <form class="form-horizontal bg-light text-dark"  action="{{URL::to('/v1/user/update/'.$user_check->ma_user)}}" method="post">
                          {{csrf_field()}}
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
+                               @if ($errors->has('name'))
+                               <p class="help is-danger"  style="color: red;">{{ $errors->first('name') }}</p>
+                               @endif
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
                           <input type="email" class="form-control" id="inputEmail"  name="email" placeholder="Email">
+                              @if ($errors->has('email'))
+                               <p class="help is-danger"  style="color: red;">{{ $errors->first('email') }}</p>
+                               @endif
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputName2" class="col-sm-2 col-form-label">Phone</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" id="inputName2"  name="phone" placeholder="Name">
+                              @if ($errors->has('phone'))
+                               <p class="help is-danger"  style="color: red;">{{ $errors->first('phone') }}</p>
+                               @endif
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputExperience" class="col-sm-2 col-form-label">Date Of Birth</label>
                         <div class="col-sm-10">
                           <textarea class="form-control" id="inputExperience"  name="ngay_sinh" placeholder="Experience"></textarea>
+                              @if ($errors->has('ngay_sinh'))
+                               <p class="help is-danger"  style="color: red;">{{ $errors->first('ngay_sinh') }}</p>
+                               @endif
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" id="inputSkills"  name="ki_nang" placeholder="Skills">
+                              @if ($errors->has('ki_nang'))
+                               <p class="help is-danger"  style="color: red;">{{ $errors->first('ki_nang') }}</p>
+                               @endif
                         </div>
                       </div>
                       <div class="form-group row">

@@ -59,68 +59,6 @@
 </div>
 
 
-
-  <div style="background-color:#FFFFFF">
-       <a style="margin: 40%" data-toggle="modal" data-target="#myModal">
-          <span class="glyphicon glyphicon-user"> Thêm</span>
-        </a>
-  </div>
-  <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Thêm khách hàng</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-     <div class="modal-body">
-        <form role="form" action="#" method="POST">
-          {{csrf_field()}}
-                <div class="form-group">
-                <label for="id">Id khách hàng:</label>
-                <input type="text" class="form-control" placeholder="Enter mã khách hàng" name="id_khachhang">
-                </div>
-                <div class="form-group">
-                <label for="hoten">Họ tên:</label>
-                <input type="text" class="form-control"  placeholder="Enter họ tên" name="hoten_khachhang">
-                </div>
-                <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email_khachhang">
-                </div>
-                <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" placeholder="Enter password" name="pass_khachhang">
-                </div>
-                <div class="form-group">
-                <label for="sdt">Số điện thoại:</label>
-                <input type="text" class="form-control" placeholder="Enter sdt" name="sdt_khachhang">
-                </div>
-                <div class="form-group">
-                <label for="diachi">Địa chỉ:</label>
-                <input type="text" class="form-control"  placeholder="Enter địa chỉ" name="diachi_khachhang">
-                </div>
-                <div class="form-group form-check">
-                <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember"> Ghi nhớ
-                </label>
-                </div>
-                <button type="submit" class="btn btn-primary" name="them_khachhang">Thêm</button>
-          </form>
-       </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {

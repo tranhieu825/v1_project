@@ -87,8 +87,8 @@ class EmployeeController extends Controller
         else {       
            return Redirect::to('v1/user/form')->with('message_error', 'Bạn đã đánh giá'); 
         }
+      }
     }
-}
 
 
      public function show_danh_gia(Request $request)
@@ -116,6 +116,29 @@ class EmployeeController extends Controller
      {
         $this->ktra_Login();
         $ma_user= Session::get('ma_user');
+        $messages =[
+           'name.required' => 'Họ tên là trường bắt buộc',
+           'ngay_sinh.required' => 'Ngày sinh là trường bắt buộc',
+           'email.required' => 'Email là trường bắt buộc',
+           'email.email' => 'Email không đúng đinh dạng',
+           'ki_nang.required' => 'Kĩ năng là trường bắt buộc',
+           'phone.required' => 'Số điện thoại là trường bắt buộc',
+        
+         ];
+         $rules = [
+          'name' => 'required',
+          'ngay_sinh' => 'required',
+          'email' => 'required|email',
+          'phone' => 'required',
+          'ki_nang' => 'required',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if( $validator->fails())
+            {
+              return Redirect()->back()->withErrors( $validator)->withInput();
+            }
+        else
+        {
         $data= array();
         $data['ho_ten']= $request->name;
         $data['ngay_sinh']= $request->ngay_sinh;
@@ -125,11 +148,8 @@ class EmployeeController extends Controller
         $update= DB::table('user')->where('ma_user',$id)->update($data);
         $user= DB::table('user')->where('ma_user',$id)->join('chucvu', 'user.ma_cv', '=', 'chucvu.ma_cv')->get();
         return view('user.my_profit')->with('user',$user)->with('update',$update);
-    
+        }
      }
-
-
-
 
 }
   

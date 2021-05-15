@@ -26,7 +26,7 @@ class LoginController extends Controller
         if($ma_user){
             if($role=='employee')
             {
-            return Redirect::to('layout-employee');
+            return Redirect::to('v1/user/layout');
             }
             if($role=='user_danhgia')
             {
@@ -103,7 +103,7 @@ class LoginController extends Controller
               Session::put('phong_ban',$result->ma_pb);
               $role= Session::get('role');  
               if($role=='employee')
-              return Redirect::to('layout-employee');
+              return Redirect::to('v1/user/layout');
               if($role=='user_danhgia')
               return Redirect::to('form-user-danhgia');
               if($role=='admin')

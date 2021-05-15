@@ -1,77 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+  	<title>LOGIN EMPLOYEE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Head -->
-<head>
+	<link href="{{asset('resources/css/style.css')}}" rel='stylesheet' type='text/css' />
 
-<title>Existing Login Form a Flat Responsive Widget Template :: W3layouts</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
-<!-- Meta-Tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="keywords" content="Existing Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //Meta-Tags -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-<link href="{{asset('public/frontend/css/popuo-box.css')}}" rel="stylesheet" type="text/css" media="all" />
 
-<!-- Style --> <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}" type="text/css" media="all">
-
-<!-- Fonts -->
-<link href="{{asset('//fonts.googleapis.com/css?family=Quicksand:300,400,500,700')}}" rel="stylesheet">
-<script src="{{asset('https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js')}}"></script>
-<!-- //Fonts -->
-
-</head>
-<!-- //Head -->
-
-<!-- Body -->
-<body>
-
-	<h1>CUSTOMER LOGIN</h1>
-
-	<div class="w3layoutscontaineragileits">
-	<h2>Login here</h2>
-	     <form action="{{URL::to('/user-dashboard')}}" method="post" id="form_login">
-          	{{csrf_field()}}
-			<input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value="{{old('email')}}">
-			@if($errors->has('email'))
-                 <p style="color: red;">{{$errors->first('email')}}</p>
-            @endif
-			<input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password" value="{{old('password')}}">
-			 @if($errors->has('password'))
-                  <p style="color: red;">{{$errors->first('password')}}</p>
-            @endif
-			<ul class="agileinfotickwthree">
-				<li>
-					<input type="checkbox" id="brand1" value="">
-					<label for="brand1"><span></span>Remember me</label>
-					<a href="#">Forgot password?</a>
-				</li>
-			</ul>
-			<div class="aitssendbuttonw3ls">
-				<input type="submit" value="Đăng nhập" name="login">
-				<p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p>
-				<div class="clear"></div>
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">LOGIN EMPLOYEE</h2>
+				</div>
 			</div>
-		</form>
-	</div>
-	
-	<!-- for register popup -->
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+				     <form action="{{URL::to('v1/user/dashboard')}}" method="post" id="form_login">
+          	{{csrf_field()}}
+		      		<div class="form-group">
+		      			<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+		      			<input type="email" name="email" id="email"  class="form-control rounded-left" placeholder="Username" required>
+		      						@if($errors->has('email'))
+                                    <p style="color: red;">{{$errors->first('email')}}</p>
+                                    @endif
+		      		</div>
+	            <div class="form-group">
+	            	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+	              <input type="password"  name="password" id="password" class="form-control rounded-left" placeholder="Password" required>
+	                                @if($errors->has('password'))
+                                    <p style="color: red;">{{$errors->first('password')}}</p>
+                                    @endif
+	            </div>
+	            <div class="form-group d-flex align-items-center">
+	            	<div class="w-100">
+	            		<label class="checkbox-wrap checkbox-primary mb-0">Save Password
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-100 d-flex justify-content-end">
+		            	<button type="submit" class="btn btn-primary rounded submit">Login</button>
+	            	</div>
+	            </div>
+	            <div class="form-group mt-4">
+								<div class="w-100 text-center">
+							
+									<p><a href="#">Forgot Password</a></p>
+								</div>
+	            </div>
+	          </form>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<!-- //for register popup -->
-	
-	<div class="w3footeragile">
-		<p> &copy; All Rights Reserved | Design by <a href="http://w3layouts.com" target="_blank">Hieu && Huy</a></p>
-	</div>
+  <script src="{{asset('resources/js/jquery.min.js')}}"></script>
+  <script src="{{asset('resources/js/popper.js')}}"></script>
+  <script src="{{asset('resources/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('resources/js/main.js')}}"></script>
 
-	
-	<script type="text/javascript" src="{{asset('public/frontend/js/jquery-2.1.4.min.js')}}"></script>
 
-	<!-- pop-up-box-js-file -->  
-		<script src="{{asset('public/frontend/js/jquery.magnific-popup.js')}}" type="text/javascript"></script>
-	<!--//pop-up-box-js-file -->
-	<script>
+  
+
+	</body>
+		<script>
 		$(document).ready(function() {
 		$('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
 			type: 'inline',
@@ -116,7 +118,7 @@
 				},
 			submitHandler : function(){
 				$.ajax({
-					'url' : 'user-dashboard',
+					'url' : 'v1/user/dashboard',
 					'data' : {
 						'email' : $('#email').val(),
 						'password' : $('#password').val()
@@ -132,7 +134,5 @@
 	})
 </script>
 
-</body>
-<!-- //Body -->
-
 </html>
+
